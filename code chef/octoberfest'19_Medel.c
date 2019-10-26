@@ -33,6 +33,7 @@ Example Output
 */
 
 #include<stdio.h>
+#include<algorithm>
 int main()
 {
 	int n,k,w;
@@ -40,9 +41,7 @@ int main()
 	int temp;
 	int l=0;
 	scanf("%d",&n); //number of test cases
-	n=n*2;
-	int sol[n];
-	n=n/2;
+	int sol[n*2];
 
 	for(i=0;i<n;i++)
 	{
@@ -55,21 +54,7 @@ int main()
 			b[j]=a[j];
 		}
 
-		for(j=0;j<k;j++)
-		{
-			for(w=j;w<k;w++)
-			{
-				if(a[j]>a[w])
-				{
-					temp=a[j];
-					a[j]=a[w];
-					a[w]=temp;
-				}
-
-			}
-		}
-
-		
+		sort(a,&a[k]);
 
 		for(j=0;j<k;j++)
 			{
